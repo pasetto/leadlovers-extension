@@ -1,0 +1,16 @@
+{
+  "name": "Adicioina email para orçamento",
+  "short_name": "NanoDesign",
+  "version": "1.0",
+  "description":
+    "Adiciona nome e email para funil específico.",
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": { "128": "icon.png" },
+  "web_accessible_resources": ["content.js", "main.js", "vendor.js"],
+  "manifest_version": 2
+}
