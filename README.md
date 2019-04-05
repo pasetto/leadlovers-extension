@@ -1,1 +1,1 @@
-# leadlovers-extension
+# Gmail -> leadlovers
