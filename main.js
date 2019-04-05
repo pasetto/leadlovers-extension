@@ -28,7 +28,7 @@
 			
 			$("#leadlovers-button").click(function() {
 				var c = null;
-				
+				var tId = null;
 				try {
 					c = ___gmail.get.displayed_email_data();
 					if (!c) {
@@ -37,11 +37,13 @@
 				} catch(e) {
 					c = __gmx.get.email_data(__gmx.get.thread_id());
 				}
+				console.log('c.threads[c.thread_id]', c.threads[c.thread_id]['from']);
+				console.log('c.threads[c.thread_id]', c.threads[c.thread_id]['from_email']);
+				// tId = c.thread_id;
 				
-				
-				var leadName = prompt("Confirme o nome: (caso cancele o usará o nome já atribuido no leadlovers)", c.people_involved[0][0]);
-				var leadMail = prompt("Confirme o email: (caso cancele o envio será cancelado)", c.people_involved[0][1]);
-				console.log(leadMail);
+				var leadName = prompt("Confirme o nome: (caso cancele o usará o nome já atribuido no leadlovers)", c.threads[c.thread_id]['from']);
+				var leadMail = prompt("Confirme o email: (caso cancele o envio será cancelado)", c.threads[c.thread_id]['from_email']);
+
 				// var s = c.subject || "Reply to email";
 				// var n = "";
 				// n += "People involved: ";
