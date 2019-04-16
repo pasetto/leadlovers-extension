@@ -37,8 +37,8 @@
 				} catch(e) {
 					c = __gmx.get.email_data(__gmx.get.thread_id());
 				}
-				console.log('c.threads[c.thread_id]', c.threads[c.thread_id]['from']);
-				console.log('c.threads[c.thread_id]', c.threads[c.thread_id]['from_email']);
+				// console.log('c.threads[c.thread_id]', c.threads[c.thread_id]['from']);
+				// console.log('c.threads[c.thread_id]', c.threads[c.thread_id]['from_email']);
 				// tId = c.thread_id;
 				
 				var leadName = prompt("Confirme o nome: (caso cancele o usará o nome já atribuido no leadlovers)", c.threads[c.thread_id]['from']);
@@ -78,13 +78,16 @@
 					"email": leadMail
 				}
 				
-				var params = serialize(sentJson) ;
 				if( leadName.length !== 0 )
 					sentJson.name = leadName;
+
+				var params = serialize(sentJson) ;
+
+				console.log(sentJson);
 				
 				var http = new XMLHttpRequest();
 				var url = 'https://paginas.rocks/Pages/Index/' + machineId;
-				console.log('params', params);
+				// console.log('params', params);
 				http.open('POST', url, true);
 				
 				//Send the proper header information along with the request
